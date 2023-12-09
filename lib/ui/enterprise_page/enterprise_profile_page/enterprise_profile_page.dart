@@ -89,7 +89,7 @@ import 'package:AppleYonsei/ui/enterprise_page/enterprise_profile_page/model/ext
                             ),
                             const SizedBox(
                               height: 30,
-                              child: Text("enterprise_page -> login_page -> login_page.dart (logout page)"),
+                              child: Text("enterprise_profile_page"),
                             ),
                             Text("이름 : $locationCode, $storeName"),
                             Text("소개 : $store_info"),
