@@ -68,7 +68,7 @@ class GetReservations extends StatelessWidget {
                           Container(
                             height: 100,
                             width: 220,
-                            color: Colors.blue,
+                            color: Colors.lightGreen,
                             padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -104,7 +104,7 @@ class GetReservations extends StatelessWidget {
                                 Container(
                                   height: 4,
                                 ),
-                                Text("인원 : ${data['person']} 명"),
+                                Text("인원 : ${data['person']} 명, 노쇼 : ${data['noShow']} 회"),
                                 // Text("${data['person'] ?? 'loading...'}명"),
                                 Text("예약명 : ${data['nickname']}"),
                               ],
