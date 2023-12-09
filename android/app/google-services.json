@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "69903938202",
+    "project_id": "appple-yonsei",
+    "storage_bucket": "appple-yonsei.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:69903938202:android:9f62c8167b27de016ce523",
+        "android_client_info": {
+          "package_name": "com.example.airbandb"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoLf8PJF5xPvzkWaj0RN2lK-bl8ejafJc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:69903938202:android:86b61a850bfc7c256ce523",
+        "android_client_info": {
+          "package_name": "com.example.local"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoLf8PJF5xPvzkWaj0RN2lK-bl8ejafJc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:69903938202:android:5d795fcff921fc476ce523",
+        "android_client_info": {
+          "package_name": "com.example.prompt"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoLf8PJF5xPvzkWaj0RN2lK-bl8ejafJc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
