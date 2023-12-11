@@ -84,7 +84,7 @@ class _RegisterPageState extends State<RegisterPage> {
           'userTypeEnterprise' : checkboxController2.value,
           'cardRegister' : cardRegister,
           'enterpriseDataRegister' : enterpriseDataRegister,
-          'nickname' : nicknameController,
+          'nickname' : nicknameController.text,
         });
         print("User registered succesfully!");
 
