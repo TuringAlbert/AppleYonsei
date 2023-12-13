@@ -117,7 +117,7 @@ class _DashboardPageState extends State<DashboardPage> {
                 borderRadius: BorderRadius.circular(bRad),
               ),
               child: Container(
-                width: 800,
+                // width: 800,
                 padding: EdgeInsets.all(8.0),
                 child: Column(
                   children: [
@@ -128,7 +128,7 @@ class _DashboardPageState extends State<DashboardPage> {
                       padding: EdgeInsets.all(8.0),
                       child: GestureDetector(
                         child: CupertinoSlidingSegmentedControl<Switcher>(
-                          thumbColor: Colors.blue,
+                          thumbColor: Colors.yellow,
                           children: {
                             Switcher.no: Text("No"),
                             Switcher.yes: Text("Yes"),
@@ -157,7 +157,8 @@ class _DashboardPageState extends State<DashboardPage> {
             ),
 
             /////// 예약대기 //////////
-            Expanded(child: feedState(selectedSwitcher, updateState)),
+            Expanded(
+                child: feedState(selectedSwitcher, updateState, statusBar)),
 
             /// MAKE MORE RESERVATIONS ///
 
@@ -176,6 +177,7 @@ class _DashboardPageState extends State<DashboardPage> {
   Widget feedState(
     Switcher category,
     Function(bool, dynamic) updateState,
+    Function(bool) statusBar,
   ) {
     switch (category) {
       case Switcher.no:
@@ -189,24 +191,27 @@ class _DashboardPageState extends State<DashboardPage> {
           future: fetchHistoryData(),
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return CircularProgressIndicator(); // or another loading indicator
+              return SizedBox.shrink(); // or another loading indicator
             } else if (snapshot.hasError) {
-              return Text('Error: ${snapshot.error}');
+              // return Text('Error: ${snapshot.error}');
+              return Text('loading...');
             } else {
               // print(itemsToRemove);
               return ListView.builder(
                 itemCount: reservationDocId.length,
                 itemBuilder: (context, index) => ListTile(
                   title: GetReservations(
-                    documentID: reservationDocId[index],
-                    bColor: bColor,
-                    bRad: bRad,
-                    callback: updateState,
-                    confAddress: confAddress,
-                    confName: storeName,
-                    confNum: storeNum,
-                    // updateArray: widget.updateArray
-                  ),
+                      documentID: reservationDocId[index],
+                      bColor: bColor,
+                      bRad: bRad,
+                      callback: updateState,
+                      confAddress: confAddress,
+                      confName: storeName,
+                      confNum: storeNum,
+                      status: statusBar
+
+                      // updateArray: widget.updateArray
+                      ),
                 ),
               );
             }
@@ -245,6 +250,19 @@ class _DashboardPageState extends State<DashboardPage> {
     });
   }
 
+  // status bar
+  void statusBar(bool status) {
+    if (status) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('예약 수락!'), duration: Duration(seconds: 2)),
+      );
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('예약 삭제!'), duration: Duration(seconds: 2)),
+      );
+    }
+  }
+
   /// PLACEHOLDER FUNCTION, add users
   void acceptReservation() {
     _firestore.collection('reservation_waiting').add({
@@ -258,4 +276,3 @@ class _DashboardPageState extends State<DashboardPage> {
     });
   }
 }
-

@@ -16,15 +16,15 @@ class _LoginOrRegisterPageState extends State<LoginOrRegisterPage> {
   bool showLoginPage = true;
 
   //toggle between login and register page
-  void togglePages(){
+  void togglePages() {
     setState(() {
-      showLoginPage =! showLoginPage;
+      showLoginPage = !showLoginPage;
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    if (showLoginPage){
+    if (showLoginPage) {
       return SigninPage(
         onTap: togglePages,
       );

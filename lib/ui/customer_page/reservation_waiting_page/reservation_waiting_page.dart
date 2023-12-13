@@ -6,8 +6,6 @@ import 'package:AppleYonsei/ui/customer_page/customer_profile_page/login_overlay
 import 'package:AppleYonsei/ui/customer_page/common/animated_scale_screen_widget.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-
-
 class ReservationWaitingPage extends StatefulWidget {
   const ReservationWaitingPage({Key? key}) : super(key: key);
 
@@ -17,8 +15,7 @@ class ReservationWaitingPage extends StatefulWidget {
 
 class _ReservationWaitingPageState extends State<ReservationWaitingPage> {
   final Stream<QuerySnapshot> _usersStream =
-    FirebaseFirestore.instance.collection('users').snapshots();
-
+      FirebaseFirestore.instance.collection('users').snapshots();
 
   late Timer _timer;
   int _selectedIndex = 0;
@@ -27,8 +24,6 @@ class _ReservationWaitingPageState extends State<ReservationWaitingPage> {
   // List to hold data from Firebase
   List<Map<String, dynamic>> reservationData = [];
   List<Map<String, dynamic>> reservationWaitingData = [];
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -65,53 +60,82 @@ class _ReservationWaitingPageState extends State<ReservationWaitingPage> {
                     itemCount: reservationWaitingData.length,
                     itemBuilder: (context, index) {
                       var dataWaiting = reservationWaitingData[index];
-                      return ListTile(
-                        leading: Icon(Icons.calendar_today),
-                        title: Text(dataWaiting['prefer'] + " 관련 " +
-                            dataWaiting["location"] + "지역 식당을 찾고 있어요!"),
-                        subtitle: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text("장소 : " + dataWaiting['location']),
-                                Text("시간 : " + dataWaiting['time']),
-                                Text("인원 : " + dataWaiting['person'] + " 명"),
-                                Text("선호 메뉴 : " + dataWaiting['prefer']),
-                                Text("비선호 메뉴 : " + dataWaiting['unprefer']),
-                                // Add more subtitles as needed
-                              ],
-                            ),
-                            ElevatedButton(
-                                onPressed: () {
-                                  //예약 취소하기
-                                  _cancelReservation(dataWaiting['user']);
-                                },
-                                child: const Text("예약 취소",
-                                  style: TextStyle(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold,
-                                  ),),
-                                style: ButtonStyle(
-                                  backgroundColor: MaterialStateProperty.all(
-                                      Colors.red),
-                                  foregroundColor: MaterialStateProperty.all(
-                                      Colors.white),
-                                  minimumSize: MaterialStateProperty.all(
-                                      Size(50, 50)),
-                                ))
-                          ],
+                      return Container(
+                        margin: EdgeInsets.fromLTRB(
+                            10, 5, 10, 5), // Set top and bottom padding
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(30),
+                            border: Border.all(color: Colors.orange)),
+                        child: ListTile(
+                          leading: Icon(Icons.calendar_today),
+                          title: Text(dataWaiting['prefer'] +
+                              " 관련 " +
+                              dataWaiting["location"] +
+                              "지역 식당을 찾고 있어요!"),
+                          subtitle: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text("장소 : " + dataWaiting['location']),
+                                      VerticalDivider(thickness: 1),
+                                      Text("시간 : " + dataWaiting['time']),
+                                    ],
+                                  ),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text("인원 : " +
+                                          dataWaiting['person'] +
+                                          " 명"),
+                                      VerticalDivider(thickness: 1),
+                                      Text("선호 메뉴 : " + dataWaiting['prefer']),
+                                      VerticalDivider(thickness: 1),
+                                      Text("비선호 메뉴 : " +
+                                          dataWaiting['unprefer']),
+                                    ],
+                                  ),
+                                  // Add more subtitles as needed
+                                ],
+                              ),
+                              ElevatedButton(
+                                  onPressed: () {
+                                    //예약 취소하기
+                                    _cancelReservation(dataWaiting['user']);
+                                  },
+                                  child: const Text(
+                                    "예약 취소",
+                                    style: TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  style: ButtonStyle(
+                                    backgroundColor:
+                                        MaterialStateProperty.all(Colors.red),
+                                    foregroundColor:
+                                        MaterialStateProperty.all(Colors.white),
+                                    minimumSize:
+                                        MaterialStateProperty.all(Size(50, 50)),
+                                  ))
+                            ],
+                          ),
+                          onTap: () {
+                            // Add your onTap logic here
+                          },
                         ),
-                        onTap: () {
-                          // Add your onTap logic here
-                        },
                       );
                     },
                   ),
                 ),
                 ListTile(
-                  contentPadding: EdgeInsets.all(10),
+                  contentPadding: EdgeInsets.fromLTRB(10, 5, 10, 5),
                   tileColor: Colors.amber,
                   title: Text(
                     "예약확정 내역",
@@ -125,25 +149,35 @@ class _ReservationWaitingPageState extends State<ReservationWaitingPage> {
                 // Use ListView.builder to dynamically create ListTiles
                 Expanded(
                   child: ListView.builder(
-
                     itemCount: reservationData.length,
                     itemBuilder: (context, index) {
                       var data = reservationData[index];
 
-                      return ListTile(
-                        leading: Icon(Icons.calendar_today),
-                        title: Text(data['confirmedStoreName']),
-                        subtitle: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                      return Container(
+                        margin:
+                            EdgeInsets.all(5.0), // Set top and bottom padding
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(30),
+                            border: Border.all(color: Colors.orange)),
+                        child: Column(
                           children: [
-                            Text(data['confirmedStoreAddress']),
-                            Text(data['confirmedStoreNum']),
-                            // Add more subtitles as needed
+                            ListTile(
+                              leading: Icon(Icons.calendar_today),
+                              title: Text(data['confirmedStoreName']),
+                              subtitle: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(data['confirmedStoreAddress']),
+                                  Text(data['confirmedStoreNum']),
+                                  // Add more subtitles as needed
+                                ],
+                              ),
+                              onTap: () {
+                                // Add your onTap logic here
+                              },
+                            ),
                           ],
                         ),
-                        onTap: () {
-                          // Add your onTap logic here
-                        },
                       );
                     },
                   ),
@@ -151,40 +185,46 @@ class _ReservationWaitingPageState extends State<ReservationWaitingPage> {
               ],
             ),
           );
-        }
-    );
+        });
   }
-
 
   @override
   void initState() {
     super.initState();
-    _timer = Timer.periodic(Duration(seconds: 1), (Timer timer)
-    {
+    _timer = Timer.periodic(Duration(seconds: 1), (Timer timer) {
       setState(() {
         _fetchDataFromFirebase();
       });
     });
   }
-  void _fetchDataFromFirebase() async {
 
+  void _fetchDataFromFirebase() async {
     //email 불러오기
-    var result = await FirebaseFirestore.instance.collection('users').doc(uid).get();
+    var result =
+        await FirebaseFirestore.instance.collection('users').doc(uid).get();
     // List<Map<String, dynamic>> result_uid = result.map((doc) => doc.data() as Map<String, dynamic>).toList();
     // print("HELLO WORLD---------------------");
     String userEmail = result['email'];
     // print("user Email : $userEmail");
     //예약확정 내역 데이터 불러오기
-    var snapshot = await FirebaseFirestore.instance.collection('reservation_confirm').where("user", isEqualTo: userEmail).get();
+    var snapshot = await FirebaseFirestore.instance
+        .collection('reservation_confirm')
+        .where("user", isEqualTo: userEmail)
+        .get();
     // print("snapshot : $snapshot");
     var documents = snapshot.docs;
 
     // var reservationData = documents.map((doc) => doc.data() as Map<String, dynamic>).toList();
     // print(reservationData);
 
-    var reservationsnap = FirebaseFirestore.instance.collection('reservation_confirm').where("user", isEqualTo: userEmail).snapshots().listen((QuerySnapshot snapshot) {
+    var reservationsnap = FirebaseFirestore.instance
+        .collection('reservation_confirm')
+        .where("user", isEqualTo: userEmail)
+        .snapshots()
+        .listen((QuerySnapshot snapshot) {
       snapshot.docChanges.forEach((change) {
-        var reservationData = documents.map((doc) => doc.data() as Map<String, dynamic>).toList();
+        var reservationData =
+            documents.map((doc) => doc.data() as Map<String, dynamic>).toList();
         // print(reservationData);
         // Handle document changes (added, modified, removed)
         if (change.type == DocumentChangeType.added) {
@@ -197,29 +237,31 @@ class _ReservationWaitingPageState extends State<ReservationWaitingPage> {
       });
     });
 
-
-
     //예약대기 내역 데이터 불러오기
-    var snapshot_waiting_query = await FirebaseFirestore.instance.collection("reservation_waiting").where("user", isEqualTo: userEmail).get();
+    var snapshot_waiting_query = await FirebaseFirestore.instance
+        .collection("reservation_waiting")
+        .where("user", isEqualTo: userEmail)
+        .get();
     var documents_waiting_query = snapshot_waiting_query.docs;
 
-
-
     setState(() {
-
       //예약대기 내역 데이터 불러오기
-      reservationWaitingData = documents_waiting_query.map((doc) => doc.data() as Map<String, dynamic>).toList();
+      reservationWaitingData = documents_waiting_query
+          .map((doc) => doc.data() as Map<String, dynamic>)
+          .toList();
       // print(reservationWaitingData);
       //예약확정 내역 데이터 불러오기
-      reservationData = documents.map((doc) => doc.data() as Map<String, dynamic>).toList();
+      reservationData =
+          documents.map((doc) => doc.data() as Map<String, dynamic>).toList();
       // print(reservationData);
-
     });
   }
+
   void _cancelReservation(String reservationId) async {
     try {
       //email 불러오기
-      var result = await FirebaseFirestore.instance.collection('users').doc(uid).get();
+      var result =
+          await FirebaseFirestore.instance.collection('users').doc(uid).get();
       // List<Map<String, dynamic>> result_uid = result.map((doc) => doc.data() as Map<String, dynamic>).toList();
       // print("HELLO WORLD---------------------");
       String userEmail = result['email'];
@@ -232,7 +274,10 @@ class _ReservationWaitingPageState extends State<ReservationWaitingPage> {
 
       documents_waiting_query.forEach((doc) {
         var uuid = doc.id;
-        FirebaseFirestore.instance.collection('reservation_waiting').doc(uuid).delete();
+        FirebaseFirestore.instance
+            .collection('reservation_waiting')
+            .doc(uuid)
+            .delete();
         setState(() {
           // 여기에서 상태를 업데이트하거나 필요한 작업을 수행할 수 있습니다.
         });
@@ -255,6 +300,4 @@ class _ReservationWaitingPageState extends State<ReservationWaitingPage> {
       print('예약 취소 에러: $e');
     }
   }
-
 }
-

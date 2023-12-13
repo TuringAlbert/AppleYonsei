@@ -7,8 +7,37 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'model/reservation_completed_page.dart';
 
 const List<String> locationlist = ['신촌', '안암'];
-const List<String> personlist = ['4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14','15','16','17'];
-const List<String> timelist = ['16:00', '16:30', '17:00', '17:30', '18:00', '18:30', '19:00', '19:30', '20:00', '20:30', '21:00', '21:30', '22:00'];
+const List<String> personlist = [
+  '4',
+  '5',
+  '6',
+  '7',
+  '8',
+  '9',
+  '10',
+  '11',
+  '12',
+  '13',
+  '14',
+  '15',
+  '16',
+  '17'
+];
+const List<String> timelist = [
+  '16:00',
+  '16:30',
+  '17:00',
+  '17:30',
+  '18:00',
+  '18:30',
+  '19:00',
+  '19:30',
+  '20:00',
+  '20:30',
+  '21:00',
+  '21:30',
+  '22:00'
+];
 const List<String> pmenulist = ['치킨', '피자', '햄버거', '삼겹살', '국밥', '면류'];
 const List<String> nmenulist = ['피자', '치킨', '햄버거', '삼겹살', '국밥', '면류'];
 
@@ -19,7 +48,8 @@ class GroupReservationPage extends StatefulWidget {
   _GroupReservationPageState createState() => _GroupReservationPageState();
 }
 
-class _GroupReservationPageState extends AnimatedScaleScreenWidget<GroupReservationPage> {
+class _GroupReservationPageState
+    extends AnimatedScaleScreenWidget<GroupReservationPage> {
   String selectedLocation = '신촌';
   String selectedPerson = '4';
   String selectedTime = '16:00';
@@ -31,7 +61,6 @@ class _GroupReservationPageState extends AnimatedScaleScreenWidget<GroupReservat
   final passwordController = TextEditingController();
   final user = FirebaseAuth.instance.currentUser!;
 
-
   bool _showOverlay = false;
   late AnimationController? overlayController;
   late Animation<double>? overlayAnimation;
@@ -40,8 +69,7 @@ class _GroupReservationPageState extends AnimatedScaleScreenWidget<GroupReservat
   late String noShow;
 
   //dropdownbutton 예약
-  void ReservationRegister() async{
-
+  void ReservationRegister() async {
     try {
       final nicknameSnapshot = await FirebaseFirestore.instance
           .collection('users')
@@ -54,8 +82,12 @@ class _GroupReservationPageState extends AnimatedScaleScreenWidget<GroupReservat
         if (data != null) {
           var nickname = data["nickname"];
           var noShow = data["noShow"];
+          var avoid = [];
 
-          await FirebaseFirestore.instance.collection('reservation_waiting').doc().set({
+          await FirebaseFirestore.instance
+              .collection('reservation_waiting')
+              .doc()
+              .set({
             "user": user.email,
             "customer_uid": user.uid,
             "nickname": nickname,
@@ -67,6 +99,7 @@ class _GroupReservationPageState extends AnimatedScaleScreenWidget<GroupReservat
             "pending_status": pending_status,
             "confirm_status": confirm_status,
             "noShow": noShow,
+            "avoid": avoid,
           });
 
           print('예약이 성공적으로 추가되었습니다!');
@@ -94,14 +127,14 @@ class _GroupReservationPageState extends AnimatedScaleScreenWidget<GroupReservat
               child: DropdownButtonExample(
                 list: locationlist,
                 title: '위치',
-                onChanged : (String value) {
+                onChanged: (String value) {
                   setState(() {
                     selectedLocation = value;
                   });
                 },
               ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 15),
             Container(
               width: 200,
               child: DropdownButtonExample(
@@ -114,7 +147,7 @@ class _GroupReservationPageState extends AnimatedScaleScreenWidget<GroupReservat
                 },
               ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 15),
             Container(
               width: 200,
               child: DropdownButtonExample(
@@ -127,7 +160,7 @@ class _GroupReservationPageState extends AnimatedScaleScreenWidget<GroupReservat
                 },
               ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 15),
             Container(
               width: 200,
               child: DropdownButtonExample(
@@ -140,7 +173,7 @@ class _GroupReservationPageState extends AnimatedScaleScreenWidget<GroupReservat
                 },
               ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 15),
             Container(
               width: 200,
               child: DropdownButtonExample(
@@ -153,30 +186,45 @@ class _GroupReservationPageState extends AnimatedScaleScreenWidget<GroupReservat
                 },
               ),
             ),
-            SizedBox(height: 50,),
-            ElevatedButton(onPressed: () {
+            SizedBox(
+              height: 30,
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  // Access the selected values here
+                  print(user.email);
+                  print('Selected Location: $selectedLocation');
+                  print('Selected Person: $selectedPerson');
+                  print('Selected Time: $selectedTime');
+                  print('Selected Preferred Menu: $selectedPreferredMenu');
+                  print(
+                      'Selected Non-Preferred Menu: $selectedNonPreferredMenu');
+                  print('Pendign status : $pending_status');
+                  print('reservation status : $confirm_status');
+                  // You can use these values for further processing or send them to a function.
+                  ReservationRegister();
 
-              // Access the selected values here
-              print(user.email);
-              print('Selected Location: $selectedLocation');
-              print('Selected Person: $selectedPerson');
-              print('Selected Time: $selectedTime');
-              print('Selected Preferred Menu: $selectedPreferredMenu');
-              print('Selected Non-Preferred Menu: $selectedNonPreferredMenu');
-              print('Pendign status : $pending_status');
-              print('reservation status : $confirm_status');
-              // You can use these values for further processing or send them to a function.
-              ReservationRegister();
-
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => ReservationCompletedPage(),
-                ),
-              );
-            },
-                child: Text("예약하기"),
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ReservationCompletedPage(),
+                    ),
+                  );
+                },
+                child: Text("예약하기", style: TextStyle(color: Colors.white)),
                 style: ButtonStyle(
                   minimumSize: MaterialStateProperty.all(Size(300, 50)),
+                  backgroundColor: MaterialStateProperty.resolveWith<Color>(
+                      (Set<MaterialState> states) {
+                    // Return the desired background color based on the button state
+                    if (states.contains(MaterialState.hovered)) {
+                      // Return the background color for the hovered state
+                      return Colors.orange.shade200;
+                    } else {
+                      // Return the background color for the normal state
+                      return Colors.orange;
+                    }
+                  }),
                 ))
           ],
         ),
@@ -184,7 +232,6 @@ class _GroupReservationPageState extends AnimatedScaleScreenWidget<GroupReservat
     );
   }
 }
-
 
 class DropdownButtonExample extends StatefulWidget {
   final List<String> list;
@@ -196,8 +243,7 @@ class DropdownButtonExample extends StatefulWidget {
     required this.list,
     required this.title,
     required this.onChanged,
-  })
-      : super(key: key);
+  }) : super(key: key);
 
   @override
   State<DropdownButtonExample> createState() => _DropdownButtonExampleState();
@@ -205,7 +251,6 @@ class DropdownButtonExample extends StatefulWidget {
 
 class _DropdownButtonExampleState extends State<DropdownButtonExample> {
   String dropdownValue = '';
-
 
   @override
   void initState() {
@@ -218,17 +263,27 @@ class _DropdownButtonExampleState extends State<DropdownButtonExample> {
     return Column(
       children: [
         Center(child: Text(widget.title)),
-        DropdownButton<String>(
+        DropdownButtonFormField<String>(
+          decoration: InputDecoration(
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10),
+              borderSide: const BorderSide(color: Colors.orange, width: 1),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10),
+              borderSide: const BorderSide(color: Colors.orange, width: 1),
+            ),
+          ),
           value: dropdownValue,
-          icon: const Icon(Icons.arrow_downward),
+          icon: const Icon(Icons.keyboard_arrow_down),
           isExpanded: true,
           elevation: 16,
           style: const TextStyle(color: Colors.black),
-          underline: Container(
-            height: 2,
-            // width: 100,
-            color: Colors.deepPurpleAccent,
-          ),
+          // underline: Container(
+          //   height: 2,
+          //   // width: 100,
+          //   color: Colors.orange,
+          // ),
           onChanged: (String? value) {
             setState(() {
               dropdownValue = value!;

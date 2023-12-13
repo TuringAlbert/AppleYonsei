@@ -6,7 +6,6 @@ import 'package:AppleYonsei/ui/signin_page/model/my_textfield.dart';
 import 'package:AppleYonsei/ui/signin_page/model/square_tile.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-
 //convert to stateful : opt + .
 class RegisterPage extends StatefulWidget {
   final Function()? onTap;
@@ -15,10 +14,12 @@ class RegisterPage extends StatefulWidget {
   @override
   State<RegisterPage> createState() => _RegisterPageState();
 }
+
 class CheckboxController {
   final ValueNotifier<bool> valueNotifier;
 
-  CheckboxController(bool initialValue) : valueNotifier = ValueNotifier<bool>(initialValue);
+  CheckboxController(bool initialValue)
+      : valueNotifier = ValueNotifier<bool>(initialValue);
 
   bool get value => valueNotifier.value;
 
@@ -66,98 +67,98 @@ class _RegisterPageState extends State<RegisterPage> {
 
     try {
       //check if password is confirmed
-      if(passwordController.text != confirmPasswordController.text){
+      if (passwordController.text != confirmPasswordController.text) {
         //pop the loading circle
         Navigator.pop(context);
         showErrorMessage();
         return;
       } else {
-        UserCredential userCredential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        UserCredential userCredential =
+            await FirebaseAuth.instance.createUserWithEmailAndPassword(
           email: emailController.text,
           password: passwordController.text,
         );
 
         await firestore.collection('users').doc(userCredential.user!.uid).set({
-          'email' : emailController.text,
-          'password' : passwordController.text,
-          'userTypeCustomer' : checkboxController1.value,
-          'userTypeEnterprise' : checkboxController2.value,
-          'cardRegister' : cardRegister,
-          'enterpriseDataRegister' : enterpriseDataRegister,
-          'nickname' : nicknameController.text,
+          'email': emailController.text,
+          'password': passwordController.text,
+          'userTypeCustomer': checkboxController1.value,
+          'userTypeEnterprise': checkboxController2.value,
+          'cardRegister': cardRegister,
+          'enterpriseDataRegister': enterpriseDataRegister,
+          'nickname': nicknameController.text,
         });
         print("User registered succesfully!");
-
       }
       // pop the loading circle
       Navigator.pop(context);
-
-    }
-
-    on FirebaseAuthException catch(e) {
+    } on FirebaseAuthException catch (e) {
       //pop the loading circle
       Navigator.pop(context);
       //Wrong Email
       if (e.code == 'invalid-email') {
         //show error
         wrongEmailMessage();
-      }
-      else if (e.code == 'invalid-login-credentials') {
+      } else if (e.code == 'invalid-login-credentials') {
         wrongPasswordMessage();
-      }
-      else if (e.code == 'weak-password') {
+      } else if (e.code == 'weak-password') {
         weakPasswordMessage();
       }
     }
   }
+
   //wrong email message popup
-  void wrongEmailMessage(){
+  void wrongEmailMessage() {
     showDialog(
       context: context,
-      builder: (context){
+      builder: (context) {
         return const AlertDialog(
           title: Text('이메일을 잘못 입력하였습니다!'),
         );
       },
     );
   }
-  void showErrorMessage(){
+
+  void showErrorMessage() {
     showDialog(
       context: context,
-      builder: (context){
+      builder: (context) {
         return const AlertDialog(
           title: Text("비밀번호가 일치하지 않습니다!"),
         );
       },
     );
   }
+
   //wrong email message popup
-  void wrongPasswordMessage(){
+  void wrongPasswordMessage() {
     showDialog(
       context: context,
-      builder: (context){
+      builder: (context) {
         return const AlertDialog(
           title: Text('비밀번호를 잘못 입력하였습니다!'),
         );
       },
     );
   }
+
   //wrong email message popup
-  void weakPasswordMessage(){
+  void weakPasswordMessage() {
     showDialog(
       context: context,
-      builder: (context){
+      builder: (context) {
         return const AlertDialog(
           title: Text('비밀번호를 6자 이상 작성하세요!'),
         );
       },
     );
   }
+
   @override
-  void initState(){
+  void initState() {
     super.initState();
-      checkboxController1 = CheckboxController(true);
-      checkboxController2 = CheckboxController(false);
+    checkboxController1 = CheckboxController(true);
+    checkboxController2 = CheckboxController(false);
   }
 
   @override
@@ -206,7 +207,9 @@ class _RegisterPageState extends State<RegisterPage> {
                   hintText: '닉네임을 입력해주세요',
                   obscureText: false,
                 ),
-                SizedBox(height: 10,),
+                SizedBox(
+                  height: 10,
+                ),
                 // password textfield
                 MyTextField(
                   controller: passwordController,
@@ -220,7 +223,9 @@ class _RegisterPageState extends State<RegisterPage> {
                   hintText: '비밀번호를 다시 입력해주세요',
                   obscureText: true,
                 ),
-                SizedBox(height: 15,),
+                SizedBox(
+                  height: 15,
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -242,7 +247,9 @@ class _RegisterPageState extends State<RegisterPage> {
                         ),
                       ],
                     ),
-                    SizedBox(width: 30,),
+                    SizedBox(
+                      width: 30,
+                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -334,7 +341,9 @@ class _RegisterPageState extends State<RegisterPage> {
                     ],
                   ),
                 ),
-                const SizedBox(height: 50,)
+                const SizedBox(
+                  height: 50,
+                )
               ],
             ),
           ),
@@ -343,4 +352,3 @@ class _RegisterPageState extends State<RegisterPage> {
     );
   }
 }
-
