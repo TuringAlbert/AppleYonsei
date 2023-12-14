@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:AppleYonsei/ui/customer_page/reservation_waiting_page/model/naver_map_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:AppleYonsei/ui/customer_page/customer_profile_page/login_overlay_widget.dart';
@@ -173,11 +174,17 @@ class _ReservationWaitingPageState extends State<ReservationWaitingPage> {
                                 ],
                               ),
                               onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => NaverMapPage(),
+                                  ),
+                                );
                                 // Add your onTap logic here
                               },
                             ),
                           ],
                         ),
+
                       );
                     },
                   ),
