@@ -113,7 +113,7 @@ class _DashboardPageState extends State<DashboardPage> {
               margin: const EdgeInsets.all(8.0),
               // width: screenWidth,
               decoration: BoxDecoration(
-                color: Color(bColor),
+                color: Color.fromARGB(255, 255, 255, 255),
                 borderRadius: BorderRadius.circular(bRad),
               ),
               child: Container(
@@ -124,10 +124,12 @@ class _DashboardPageState extends State<DashboardPage> {
                     Icon(Icons.notifications),
                     // Text(businessCode),
                     Container(
-                      width: MediaQuery.of(context).size.width,
+                      width: 270,
                       padding: EdgeInsets.all(8.0),
                       child: GestureDetector(
                         child: CupertinoSlidingSegmentedControl<Switcher>(
+                          // backgroundColor: Colors.white,
+
                           thumbColor: Colors.yellow,
                           children: {
                             Switcher.no: Text("No"),

@@ -58,8 +58,8 @@ class GetReservations extends StatelessWidget {
 
             return Container(
               alignment: Alignment.topCenter,
-              // height: 180,
-              // width: 300,
+              height: 180,
+              width: 270,
               margin: EdgeInsets.fromLTRB(10, 15, 10, 10),
               padding: EdgeInsets.all(10),
               decoration: BoxDecoration(
@@ -78,12 +78,12 @@ class GetReservations extends StatelessWidget {
                               size: 50,
                             ),
                             Container(
-                              // height: 100,
-                              // width: double.infinity,
-                              constraints: BoxConstraints(
-                                maxWidth:
-                                    MediaQuery.of(context).size.width - 132,
-                              ),
+                              height: 100,
+                              width: 270,
+                              // constraints: BoxConstraints(
+                              //   maxWidth:
+                              //       MediaQuery.of(context).size.width - 132,
+                              // ),
                               color: Colors.lightGreen,
                               padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
                               child: Column(
@@ -136,7 +136,7 @@ class GetReservations extends StatelessWidget {
                   ),
                   Center(
                     child: Container(
-                      width: double.infinity,
+                      width: 270,
                       height: 35,
                       margin: EdgeInsets.fromLTRB(5, 7, 0, 0),
                       color: Colors.yellow,
