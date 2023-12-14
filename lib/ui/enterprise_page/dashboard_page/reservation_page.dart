@@ -78,8 +78,8 @@ class GetReservations extends StatelessWidget {
                               size: 50,
                             ),
                             Container(
-                              height: 100,
-                              width: 270,
+                              height: 110,
+                              width: 250,
                               // constraints: BoxConstraints(
                               //   maxWidth:
                               //       MediaQuery.of(context).size.width - 132,
@@ -136,7 +136,7 @@ class GetReservations extends StatelessWidget {
                   ),
                   Center(
                     child: Container(
-                      width: 270,
+                      width: 290,
                       height: 35,
                       margin: EdgeInsets.fromLTRB(5, 7, 0, 0),
                       color: Colors.yellow,

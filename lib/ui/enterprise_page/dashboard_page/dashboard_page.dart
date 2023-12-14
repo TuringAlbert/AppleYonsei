@@ -151,10 +151,17 @@ class _DashboardPageState extends State<DashboardPage> {
               ),
             ),
             Container(
+              width: 370,
               padding: EdgeInsets.only(left: 15.0),
               child: Align(
                 alignment: AlignmentDirectional.topStart,
-                child: Text("예약 대기"),
+                child: Text(
+                  "예약 대기",
+                  style: TextStyle(
+                    // fontSize: 10,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ),
             ),
 
@@ -199,21 +206,24 @@ class _DashboardPageState extends State<DashboardPage> {
               return Text('loading...');
             } else {
               // print(itemsToRemove);
-              return ListView.builder(
-                itemCount: reservationDocId.length,
-                itemBuilder: (context, index) => ListTile(
-                  title: GetReservations(
-                      documentID: reservationDocId[index],
-                      bColor: bColor,
-                      bRad: bRad,
-                      callback: updateState,
-                      confAddress: confAddress,
-                      confName: storeName,
-                      confNum: storeNum,
-                      status: statusBar
+              return Container(
+                width: 390,
+                child: ListView.builder(
+                  itemCount: reservationDocId.length,
+                  itemBuilder: (context, index) => ListTile(
+                    title: GetReservations(
+                        documentID: reservationDocId[index],
+                        bColor: bColor,
+                        bRad: bRad,
+                        callback: updateState,
+                        confAddress: confAddress,
+                        confName: storeName,
+                        confNum: storeNum,
+                        status: statusBar
 
-                      // updateArray: widget.updateArray
-                      ),
+                        // updateArray: widget.updateArray
+                        ),
+                  ),
                 ),
               );
             }
