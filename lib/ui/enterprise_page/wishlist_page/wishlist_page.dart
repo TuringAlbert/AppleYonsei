@@ -279,8 +279,7 @@ class _ReservationlistState extends State<Reservationlist> {
                           style: ElevatedButton.styleFrom(
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(5),
-                            ),
-                            primary: Colors.lightGreen,
+                            ), backgroundColor: Colors.lightGreen,
                           ),
                           onPressed: () {
                             onPressedConfirmed(widget.reservation_Id);
@@ -299,8 +298,7 @@ class _ReservationlistState extends State<Reservationlist> {
                           style: ElevatedButton.styleFrom(
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(5),
-                            ),
-                            primary: Colors.red,
+                            ), backgroundColor: Colors.red,
                           ),
                           onPressed: () {
                             onPressedNoShow(widget.customer_uid);
