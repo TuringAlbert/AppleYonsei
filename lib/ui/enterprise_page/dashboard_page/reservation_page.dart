@@ -34,7 +34,7 @@ class GetReservations extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     CollectionReference reservations =
-        _firestore.collection('reservation_waiting');
+    _firestore.collection('reservation_waiting');
     String currentDate = DateFormat('MM월 dd일').format(DateTime.now());
 
     return FutureBuilder<DocumentSnapshot>(
@@ -43,7 +43,7 @@ class GetReservations extends StatelessWidget {
         if (snapshot.connectionState == ConnectionState.done) {
           if (snapshot.hasData) {
             Map<String, dynamic> data =
-                snapshot.data!.data() as Map<String, dynamic>;
+            snapshot.data!.data() as Map<String, dynamic>;
 
             if (snapshot.data == null || !snapshot.data!.exists) {
               return SizedBox.shrink();
@@ -59,7 +59,7 @@ class GetReservations extends StatelessWidget {
             return Container(
               alignment: Alignment.topCenter,
               height: 180,
-              width: 270,
+              width: 300,
               margin: EdgeInsets.fromLTRB(10, 15, 10, 10),
               padding: EdgeInsets.all(10),
               decoration: BoxDecoration(
@@ -84,7 +84,6 @@ class GetReservations extends StatelessWidget {
                               //   maxWidth:
                               //       MediaQuery.of(context).size.width - 132,
                               // ),
-                              color: Colors.lightGreen,
                               padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -92,7 +91,7 @@ class GetReservations extends StatelessWidget {
                                 children: [
                                   Row(
                                     mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
+                                    MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text(
                                         "$currentDate ${data['time']} ",
@@ -102,12 +101,12 @@ class GetReservations extends StatelessWidget {
                                         ),
                                       ),
                                       Container(
-                                        margin: EdgeInsets.fromLTRB(1, 0, 3, 0),
+                                        margin: EdgeInsets.fromLTRB(1, 0, 1, 0),
                                         padding: EdgeInsets.all(7),
                                         decoration: BoxDecoration(
-                                          color: Colors.amberAccent,
+                                          color: Colors.orange,
                                           borderRadius:
-                                              BorderRadius.circular(15),
+                                          BorderRadius.circular(15),
                                         ),
                                         child: Text(
                                           "예약 대기",
@@ -136,14 +135,18 @@ class GetReservations extends StatelessWidget {
                   ),
                   Center(
                     child: Container(
-                      width: 290,
+                      width: 270,
                       height: 35,
                       margin: EdgeInsets.fromLTRB(5, 7, 0, 0),
-                      color: Colors.yellow,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(5),
+                              ), backgroundColor: Colors.green,
+                            ),
                             onPressed: () async {
                               String reservation_Id = documentID;
 
@@ -177,12 +180,17 @@ class GetReservations extends StatelessWidget {
 
                               callback(true, documentID);
                             },
-                            child: Text("수락"),
+                            child: Text("수락", style: TextStyle(color: Colors.black),),
                           ),
                           SizedBox(
                             width: 40,
                           ),
                           ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(5),
+                              ), backgroundColor: Colors.red,
+                            ),
                             onPressed: () {
                               _firestore
                                   .collection('reservation_waiting')
@@ -193,7 +201,7 @@ class GetReservations extends StatelessWidget {
                               status(false);
                               callback(true, documentID);
                             },
-                            child: Text("제거"),
+                            child: Text("제거", style: TextStyle(color: Colors.black),),
                           ),
                         ],
                       ),

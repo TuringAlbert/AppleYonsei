@@ -3,13 +3,27 @@ import 'package:AppleYonsei/ui/enterprise_page/enterprise_home_page.dart';
 import 'package:AppleYonsei/ui/signin_page/common_signup/card_page.dart';
 import 'package:AppleYonsei/ui/signin_page/enterprise_signup/enterprise_reservation_page.dart';
 import 'package:AppleYonsei/ui/signin_page/login_or_register.dart';
+import 'package:AppleYonsei/ui/signin_page/register_page.dart';
 import 'package:AppleYonsei/ui/signin_page/signin_page.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-class AuthPage extends StatelessWidget {
-  const AuthPage({super.key});
+class AuthPage extends StatefulWidget {
+  const AuthPage({Key? key}) : super(key: key);
+
+  @override
+  _AuthPageState createState() => _AuthPageState();
+}
+
+class _AuthPageState extends State<AuthPage> {
+  late bool _dataLoaded; // Variable to track whether data has been loaded
+
+  @override
+  void initState() {
+    super.initState();
+    _dataLoaded = false; // Initialize to false when the widget is created
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,47 +38,54 @@ class AuthPage extends StatelessWidget {
               builder: (context, userSnapshot) {
                 if (userSnapshot.connectionState == ConnectionState.waiting) {
                   return CircularProgressIndicator();
-                }
-
-                if (userSnapshot.hasError) {
+                } else if (userSnapshot.hasError) {
                   return Text('Error: ${userSnapshot.error}');
-                }
+                } else {
+                  // Data loaded successfully, set _dataLoaded to true
+                  _dataLoaded = true;
 
-                // 카드 등록 여부에 따른 화면 전환
-                // if (userSnapshot.hasData) {
-                //   // Check the value of cardRegister
-                //   bool cardRegister = userSnapshot.data!['cardRegister'];
-                //   print("===================");
-                //   print(cardRegister);
-                //   if (cardRegister == false) {
-                //     return CardPage();
-                //   }
-                // }
+                  if (userSnapshot.hasData) {
+                    // Check the value of userTypeCustomer
+                    bool userTypeCustomer = userSnapshot.data!['userTypeCustomer'] ?? false;
 
+                    // 카드 등록 여부에 따른 화면 전환
+                    // if (userSnapshot.hasData) {
+                    //   // Check the value of cardRegister
+                    //   bool cardRegister = userSnapshot.data!['cardRegister'];
+                    //   print("===================");
+                    //   print(cardRegister);
+                    //   if (cardRegister == false) {
+                    //     return CardPage();
+                    //   }
+                    // }
 
-                if (userSnapshot.hasData) {
-                  // Check the value of userTypeCustomer
-                  bool userTypeCustomer = userSnapshot.data!['userTypeCustomer'] ?? false;
+                    if (_dataLoaded) {
+                      if (userTypeCustomer) {
+                        // userTypeCustomer is true, show MyHomePage
+                        return CustomerMyHomePage(index: 1);
+                      }
+                      else {
+                        //가게 정보 등록여부 확인
+                        bool enterpriseDataRegister = userSnapshot.data!['enterpriseDataRegister'];
+                        if (enterpriseDataRegister == false){
+                          return EnterpriseReservationPage(isShrink: false);
+                        }
 
-                  if (userTypeCustomer) {
-                    // userTypeCustomer is true, show MyHomePage
-                    return CustomerMyHomePage(index: 0);
+                        else {
+                          return EnterpriseMyHomePage(title: "Enterprise Home Page");
+                        }
+                      }
+                      // Content has been loaded, show the actual content
+                    }
+                    else {
+                      // Data is still loading, show CircularProgressIndicator
+                      return CircularProgressIndicator();
+                    }
                   }
                   else {
-                    //가게 정보 등록여부 확인
-                    bool enterpriseDataRegister = userSnapshot.data!['enterpriseDataRegister'];
-                    if (enterpriseDataRegister == false){
-                      return EnterpriseReservationPage(isShrink: false);
-                    }
-
-                    else {
-                      return EnterpriseMyHomePage(title: "Enterprise Home Page");
-                    }
+                    // User data not found, handle accordingly
+                    return LoginOrRegisterPage();
                   }
-                }
-                else {
-                  // User data not found, handle accordingly
-                  return LoginOrRegisterPage();
                 }
               },
             );
@@ -81,3 +102,4 @@ class AuthPage extends StatelessWidget {
     return await FirebaseFirestore.instance.collection('users').doc(uid).get();
   }
 }
+

@@ -19,7 +19,7 @@ class EnterpriseMyHomePage extends StatefulWidget {
 }
 
 class _EnterpriseMyHomePageState extends State<EnterpriseMyHomePage> with AfterLayoutMixin {
-  int _bottomBarIndex = 2;
+  int _bottomBarIndex = 1;
   bool _isLoading = true;
   final Size _loadingIconSize = const Size(100, 100);
 

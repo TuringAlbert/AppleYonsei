@@ -102,29 +102,31 @@ class _ReservationWaitingPageState extends State<ReservationWaitingPage> {
                                           dataWaiting['unprefer']),
                                     ],
                                   ),
+                                  SizedBox(height: 10,),
+                                  ElevatedButton(
+                                      onPressed: () {
+                                        //예약 취소하기
+                                        _cancelReservation(dataWaiting['user']);
+                                      },
+                                      child: const Text(
+                                        "예약 취소",
+                                        style: TextStyle(
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                      style: ButtonStyle(
+                                        backgroundColor:
+                                        MaterialStateProperty.all(Colors.red),
+                                        foregroundColor:
+                                        MaterialStateProperty.all(Colors.white),
+                                        minimumSize:
+                                        MaterialStateProperty.all(Size(50, 50)),
+                                      ))
                                   // Add more subtitles as needed
                                 ],
                               ),
-                              ElevatedButton(
-                                  onPressed: () {
-                                    //예약 취소하기
-                                    _cancelReservation(dataWaiting['user']);
-                                  },
-                                  child: const Text(
-                                    "예약 취소",
-                                    style: TextStyle(
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                  style: ButtonStyle(
-                                    backgroundColor:
-                                        MaterialStateProperty.all(Colors.red),
-                                    foregroundColor:
-                                        MaterialStateProperty.all(Colors.white),
-                                    minimumSize:
-                                        MaterialStateProperty.all(Size(50, 50)),
-                                  ))
+
                             ],
                           ),
                           onTap: () {

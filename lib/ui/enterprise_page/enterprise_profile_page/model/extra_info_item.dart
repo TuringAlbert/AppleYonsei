@@ -12,21 +12,21 @@ class ExtraInfoItem {
     const Icon(
       Icons.account_circle_sharp,
     ),
-    () {
+        () {
       debugPrint("Route to Settings Page");
     },
   );
   static final ExtraInfoItem _help = ExtraInfoItem._(
     '보증금',
     const Icon(Icons.add_card_outlined),
-    () {
+        () {
       debugPrint("Route to Helping Page");
     },
   );
   static final ExtraInfoItem _host = ExtraInfoItem._(
     '고객센터 문의',
     const Icon(Icons.support_agent_rounded),
-    () {
+        () {
       debugPrint("Route to Hosting Page");
     },
   );

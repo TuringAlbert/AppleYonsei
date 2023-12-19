@@ -12,21 +12,21 @@ class AuthItem {
   static final AuthItem _email = AuthItem._(
     'Continue with Email',
     path + 'email_icon.png',
-    () {
+        () {
       debugPrint("Login with Email");
     },
   );
   static final AuthItem _apple = AuthItem._(
     'Continue with Apple',
     path + 'apple_icon.png',
-    () {
+        () {
       debugPrint("Login with Apple");
     },
   );
   static final AuthItem _google = AuthItem._(
     'Continue with Google',
     path + 'google_icon.png',
-    () {
+        () {
       debugPrint("Login with Google");
     },
   );
@@ -34,7 +34,7 @@ class AuthItem {
   static final AuthItem _facebook = AuthItem._(
     'Continue with Facebook',
     path + 'fb_icon.png',
-    () {
+        () {
       debugPrint("Login with Facebook");
     },
   );

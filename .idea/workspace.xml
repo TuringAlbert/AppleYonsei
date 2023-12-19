@@ -5,9 +5,49 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a5c93e91-e381-406d-af9b-339fcb5271f1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/icon/bapple.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/dartpad/web_plugin_registrant.dart" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/dartpad/web_plugin_registrant.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/bd2eb823fac2dc70bc7e788758c4d034/.filecache" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/bd2eb823fac2dc70bc7e788758c4d034/.filecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/bd2eb823fac2dc70bc7e788758c4d034/flutter_assets.d" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/bd2eb823fac2dc70bc7e788758c4d034/flutter_assets.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/bd2eb823fac2dc70bc7e788758c4d034/web_release_bundle.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/bd2eb823fac2dc70bc7e788758c4d034/web_release_bundle.stamp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/AssetManifest.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/flutter_assets/AssetManifest.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/AssetManifest.bin.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/flutter_assets/AssetManifest.bin.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/AssetManifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/flutter_assets/AssetManifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/NOTICES" beforeDir="false" afterPath="$PROJECT_DIR$/build/flutter_assets/NOTICES" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/web/.last_build_id" beforeDir="false" afterPath="$PROJECT_DIR$/build/web/.last_build_id" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/web/flutter_service_worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/web/flutter_service_worker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/web/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/web/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/GeneratedPluginRegistrant.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/GeneratedPluginRegistrant.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/customer_page/bottom_bar/custom_bottom_bar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/customer_page/bottom_bar/custom_bottom_bar.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/customer_page/bottom_bar/model/bottom_bar_item.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/customer_page/bottom_bar/model/bottom_bar_item.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/customer_page/customer_profile_page/customer_profile_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/customer_page/customer_profile_page/customer_profile_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/customer_page/customer_profile_page/login_overlay_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/customer_page/customer_profile_page/login_overlay_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/customer_page/customer_profile_page/model/auth_item.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/customer_page/customer_profile_page/model/auth_item.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/customer_page/customer_profile_page/model/extra_info_item.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/customer_page/customer_profile_page/model/extra_info_item.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/customer_page/reservation_waiting_page/reservation_waiting_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/customer_page/reservation_waiting_page/reservation_waiting_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/enterprise_page/bottom_bar/custom_bottom_bar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/enterprise_page/bottom_bar/custom_bottom_bar.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/enterprise_page/bottom_bar/model/bottom_bar_item.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/enterprise_page/bottom_bar/model/bottom_bar_item.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/enterprise_page/dashboard_page/dashboard_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/enterprise_page/dashboard_page/dashboard_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/enterprise_page/dashboard_page/reservation_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/enterprise_page/dashboard_page/reservation_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/enterprise_page/enterprise_home_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/enterprise_page/enterprise_home_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/enterprise_page/enterprise_profile_page/enterprise_profile_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/enterprise_page/enterprise_profile_page/enterprise_profile_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/enterprise_page/enterprise_profile_page/login_overlay_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/enterprise_page/enterprise_profile_page/login_overlay_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/enterprise_page/enterprise_profile_page/model/extra_info_item.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/enterprise_page/enterprise_profile_page/model/extra_info_item.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/ui/enterprise_page/wishlist_page/wishlist_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/enterprise_page/wishlist_page/wishlist_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/signin_page/auth_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/signin_page/auth_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/signin_page/register_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/signin_page/register_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/signin_page/signin_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/signin_page/signin_page.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/.idea/vcs.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,10 +64,19 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2ZC0Q8c94eNw5MSLw2XCEAhUtOB" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -40,9 +89,17 @@
     <property name="cidr.known.project.marker" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/icon" />
     <property name="settings.editor.selected.configurable" value="dart.settings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/icon" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/icon" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter">

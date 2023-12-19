@@ -29,25 +29,25 @@ class CustomBottomBar extends StatelessWidget {
         items: BottomBarItem.items
             .map(
               (item) => BottomNavigationBarItem(
-                icon: Padding(
-                  padding:
-                      const EdgeInsets.only(top: 5.0, right: 5.0, bottom: 3.0),
-                  child: SizedBox(
-                    width: 35,
-                    height: 25,
-                    child: Image(
-                      image: AssetImage(
-                        item.assetImage,
-                      ),
-                      color: index == BottomBarItem.items.indexOf(item)
-                          ? Colors.red
-                          : Colors.grey,
-                    ),
+            icon: Padding(
+              padding:
+              const EdgeInsets.only(top: 5.0, right: 5.0, bottom: 3.0),
+              child: SizedBox(
+                width: 35,
+                height: 25,
+                child: Image(
+                  image: AssetImage(
+                    item.assetImage,
                   ),
+                  color: index == BottomBarItem.items.indexOf(item)
+                      ? Colors.red
+                      : Colors.grey,
                 ),
-                label: item.label,
               ),
-            )
+            ),
+            label: item.label,
+          ),
+        )
             .toList(),
       ),
     );

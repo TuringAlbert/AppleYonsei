@@ -48,14 +48,14 @@ class _SigninPageState extends State<SigninPage> {
   // sign user in method
   void signUserIn() async {
     // show loading circle
-    showDialog(
-      context: context,
-      builder: (context) {
-        return const Center(
-          child: CircularProgressIndicator(),
-        );
-      },
-    );
+    // showDialog(
+    //   context: context,
+    //   builder: (context) {
+    //     return const Center(
+    //       child: CircularProgressIndicator(),
+    //     );
+    //   },
+    // );
     //try sign in & catch error
     try {
       UserCredential userCredential = await FirebaseAuth.instance.signInWithEmailAndPassword(
@@ -145,7 +145,7 @@ class _SigninPageState extends State<SigninPage> {
               children: [
                 const SizedBox(height: 50),
                 Image.asset("assets/images/babple_logo.png",
-                width: 100, height: 100),
+                width: 130, height: 130),
                 // logo
                 // const Icon(
                 //   Icons.lock,
@@ -157,7 +157,7 @@ class _SigninPageState extends State<SigninPage> {
                 // welcome back, you've been missed!
                 Center(
                   child: Text(
-                    'One Click 단체 예약! \n Apple Yonsei에 오신 것을 환영합니다 :)',
+                    'One Click 단체 예약! \n Bapple Yonsei에 오신 것을 환영합니다 :)',
                     style: TextStyle(
                       color: Colors.grey[700],
                       fontSize: 16,
@@ -186,18 +186,18 @@ class _SigninPageState extends State<SigninPage> {
                 const SizedBox(height: 10),
 
                 // forgot password?
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Text(
-                        '비밀번호를 잊으셨나요?',
-                        style: TextStyle(color: Colors.grey[600]),
-                      ),
-                    ],
-                  ),
-                ),
+                // Padding(
+                //   padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                //   child: Row(
+                //     mainAxisAlignment: MainAxisAlignment.end,
+                //     children: [
+                //       Text(
+                //         '비밀번호를 잊으셨나요?',
+                //         style: TextStyle(color: Colors.grey[600]),
+                //       ),
+                //     ],
+                //   ),
+                // ),
 
                 const SizedBox(height: 25),
 
@@ -210,50 +210,50 @@ class _SigninPageState extends State<SigninPage> {
                 const SizedBox(height: 50),
 
                 // or continue with
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: Divider(
-                          thickness: 0.5,
-                          color: Colors.grey[400],
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                        child: Text(
-                          '소셜 로그인',
-                          style: TextStyle(color: Colors.grey[700]),
-                        ),
-                      ),
-                      Expanded(
-                        child: Divider(
-                          thickness: 0.5,
-                          color: Colors.grey[400],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-
-                const SizedBox(height: 50),
-
-                // google + apple sign in buttons
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    // google button
-                    SquareTile(imagePath: 'images/google.png'),
-
-                    SizedBox(width: 25),
-
-                    // apple button
-                    SquareTile(imagePath: 'images/apple.png')
-                  ],
-                ),
-
-                const SizedBox(height: 50),
+                // Padding(
+                //   padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                //   child: Row(
+                //     children: [
+                //       Expanded(
+                //         child: Divider(
+                //           thickness: 0.5,
+                //           color: Colors.grey[400],
+                //         ),
+                //       ),
+                //       Padding(
+                //         padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                //         child: Text(
+                //           '소셜 로그인',
+                //           style: TextStyle(color: Colors.grey[700]),
+                //         ),
+                //       ),
+                //       Expanded(
+                //         child: Divider(
+                //           thickness: 0.5,
+                //           color: Colors.grey[400],
+                //         ),
+                //       ),
+                //     ],
+                //   ),
+                // ),
+                //
+                // const SizedBox(height: 50),
+                //
+                // // google + apple sign in buttons
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.center,
+                //   children: const [
+                //     // google button
+                //     SquareTile(imagePath: 'images/google.png'),
+                //
+                //     SizedBox(width: 25),
+                //
+                //     // apple button
+                //     SquareTile(imagePath: 'images/apple.png')
+                //   ],
+                // ),
+                //
+                // const SizedBox(height: 50),
 
                 // not a member? register now
                 GestureDetector(

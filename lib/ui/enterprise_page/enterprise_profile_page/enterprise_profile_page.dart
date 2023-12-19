@@ -96,11 +96,7 @@ class _EnterpriseProfilePageState
                               color: Colors.black,
                             ),
                           ),
-                          const SizedBox(
-                            height: 30,
-                            child: Text("enterprise_profile_page"),
-                          ),
-                          Text("이름 : $locationCode, $storeName"),
+                          Text("가게 이름 : $locationCode, $storeName"),
                           Text("소개 : $store_info"),
                           SizedBox(
                             height: 10,

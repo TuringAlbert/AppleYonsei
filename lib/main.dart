@@ -2,11 +2,6 @@ import 'dart:ui' as ui;
 import 'dart:html';
 
 import 'package:flutter/material.dart';
-
-
-
-
-
 import 'package:AppleYonsei/ui/customer_page/customer_profile_page/customer_profile_page.dart';
 import 'package:AppleYonsei/ui/signin_page/auth_page.dart';
 import 'package:AppleYonsei/ui/signin_page/common_signup/card_page.dart';

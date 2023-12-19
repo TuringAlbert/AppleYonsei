@@ -22,7 +22,7 @@ Future<List<Map<String, dynamic>>> getData() async {
   return result.docs
       .where((doc) => doc['confirm_status'] == true  && doc['Enter_uid'] == uid)
       .map((doc) => (doc.data() as Map<String, dynamic>?) ?? {})
-      // .map((doc) => {'id': doc.id, ...doc.data()!})
+  // .map((doc) => {'id': doc.id, ...doc.data()!})
       .toList();
 }
 
@@ -49,6 +49,7 @@ class _WishlistPageState extends State<WishlistPage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: SingleChildScrollView(
           child: Center(
@@ -240,7 +241,7 @@ class _ReservationlistState extends State<Reservationlist> {
                           margin: EdgeInsets.fromLTRB(1, 0, 3, 0),
                           padding: EdgeInsets.all(7),
                           decoration: BoxDecoration(
-                            color: Colors.amberAccent,
+                            color: Colors.orange,
                             borderRadius: BorderRadius.circular(15),
                           ),
                           child: Text(
@@ -279,7 +280,7 @@ class _ReservationlistState extends State<Reservationlist> {
                           style: ElevatedButton.styleFrom(
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(5),
-                            ), backgroundColor: Colors.lightGreen,
+                            ), backgroundColor: Colors.green,
                           ),
                           onPressed: () {
                             onPressedConfirmed(widget.reservation_Id);
@@ -388,9 +389,9 @@ class ReservText extends StatelessWidget {
       width: 300,
       margin: EdgeInsets.fromLTRB(4, 20, 0, 0),
       child: Text("예약 내역",
-      style: TextStyle(
-      fontWeight: FontWeight.bold,
-    ),
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
+        ),
       ),
     );
   }
@@ -406,9 +407,9 @@ class ReservListText extends StatelessWidget {
       width: 300,
       margin: EdgeInsets.fromLTRB(4, 10, 0, 0),
       child: Text("예약 목록",
-      style: TextStyle(
-      fontWeight: FontWeight.bold,
-      ),
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
+        ),
       ),
     );
   }

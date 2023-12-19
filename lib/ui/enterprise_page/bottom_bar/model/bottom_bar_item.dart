@@ -6,12 +6,12 @@ class BottomBarItem extends BaseModel {
   BottomBarItem._(String label, String assetImage)
       : super(label, assertPath + assetImage);
   static final BottomBarItem _wishlist = BottomBarItem._(
-    '예약확정',
-    'heart_icon.png',
+    '예약 확정',
+    'bookmark.png',
   );
   static final BottomBarItem _home = BottomBarItem._(
     '홈',
-    'airbnb_icon.png',
+    'calendaradd_icon.png',
   );
   // static final BottomBarItem _reservationStatus = BottomBarItem._(
   //   '예약',

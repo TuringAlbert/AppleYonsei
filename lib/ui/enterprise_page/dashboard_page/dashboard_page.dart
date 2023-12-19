@@ -75,9 +75,9 @@ class _DashboardPageState extends State<DashboardPage> {
         .where('location', isEqualTo: locationCode)
         .get()
         .then((snapshot) => snapshot.docs.forEach((confDocument) {
-              // print(confDocument.reference.id);
-              reservationDocId.add(confDocument.reference.id);
-            }));
+      // print(confDocument.reference.id);
+      reservationDocId.add(confDocument.reference.id);
+    }));
   }
 
   // Fetch history data only if it's not already available
@@ -98,7 +98,6 @@ class _DashboardPageState extends State<DashboardPage> {
             bottomRight: Radius.circular(bRad),
           ),
           child: AppBar(
-            backgroundColor: Color(bColor),
             title: Text(widget.title),
           ),
         ),
@@ -130,7 +129,7 @@ class _DashboardPageState extends State<DashboardPage> {
                         child: CupertinoSlidingSegmentedControl<Switcher>(
                           // backgroundColor: Colors.white,
 
-                          thumbColor: Colors.yellow,
+                          thumbColor: Colors.orange,
                           children: {
                             Switcher.no: Text("No"),
                             Switcher.yes: Text("Yes"),
@@ -184,17 +183,17 @@ class _DashboardPageState extends State<DashboardPage> {
   }
 
   Widget feedState(
-    Switcher category,
-    Function(bool, dynamic) updateState,
-    Function(bool) statusBar,
-  ) {
+      Switcher category,
+      Function(bool, dynamic) updateState,
+      Function(bool) statusBar,
+      ) {
     switch (category) {
       case Switcher.no:
-        // print(reservationDocId);
+      // print(reservationDocId);
         reservationDocId = [];
         return Center(child: Text(''));
       case Switcher.yes:
-        // print(reservationDocId);
+      // print(reservationDocId);
 
         return FutureBuilder(
           future: fetchHistoryData(),
@@ -221,8 +220,8 @@ class _DashboardPageState extends State<DashboardPage> {
                         confNum: storeNum,
                         status: statusBar
 
-                        // updateArray: widget.updateArray
-                        ),
+                      // updateArray: widget.updateArray
+                    ),
                   ),
                 ),
               );
@@ -243,7 +242,7 @@ class _DashboardPageState extends State<DashboardPage> {
     final User? user = _auth.currentUser;
     if (user != null) {
       DocumentSnapshot<Map<String, dynamic>> userDoc =
-          await _firestore.collection('users').doc(user.uid).get();
+      await _firestore.collection('users').doc(user.uid).get();
       setState(() {
         businessCode = userDoc['businessCode'];
         locationCode = userDoc['locationCode'];
