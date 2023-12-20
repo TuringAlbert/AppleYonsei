@@ -40,9 +40,8 @@ class _CustomerMyHomePageState extends State<CustomerMyHomePage> with AfterLayou
               width: _loadingIconSize.width,
               child: const Image(
                 image: AssetImage(
-                  'assets/icon/airbnb_icon.png',
+                  'assets/images/babple_logo.png',
                 ),
-                color: Colors.grey,
               ),
             ),
           ),

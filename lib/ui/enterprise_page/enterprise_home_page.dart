@@ -42,9 +42,8 @@ class _EnterpriseMyHomePageState extends State<EnterpriseMyHomePage> with AfterL
               width: _loadingIconSize.width,
               child: const Image(
                 image: AssetImage(
-                  'assets/icon/airbnb_icon.png',
+                    'assets/images/babple_logo.png',
                 ),
-                color: Colors.blue,
               ),
             ),
           ),

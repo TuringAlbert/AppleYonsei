@@ -163,28 +163,47 @@ class _ReservationWaitingPageState extends State<ReservationWaitingPage> {
                             borderRadius: BorderRadius.circular(30),
                             border: Border.all(color: Colors.orange)),
                         child: Column(
-                          children: [
-                            ListTile(
-                              leading: Icon(Icons.calendar_today),
-                              title: Text(data['confirmedStoreName']),
-                              subtitle: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(data['confirmedStoreAddress']),
-                                  Text(data['confirmedStoreNum']),
-                                  // Add more subtitles as needed
-                                ],
+                            children: [
+                              ListTile(
+                                leading: Icon(Icons.calendar_today),
+                                title: Text(data['confirmedStoreName']),
+                                subtitle: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(data['confirmedStoreAddress']),
+                                    Text(data['confirmedStoreNum']),
+                                    ElevatedButton(
+                                        onPressed: () {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(builder: (context) => NaverMapPage(),
+                                            ),
+                                          );
+                                        },
+                                        child: const Text(
+                                          "가게위치 지도로 보기",
+                                          style: TextStyle(
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                        style: ButtonStyle(
+                                          backgroundColor:
+                                          MaterialStateProperty.all(Colors.blue),
+                                          foregroundColor:
+                                          MaterialStateProperty.all(Colors.white),
+                                          minimumSize:
+                                          MaterialStateProperty.all(Size(50, 50)),
+                                        ))
+                                    // Add more subtitles as needed
+                                  ],
+                                ),
+                                onTap: () {
+
+                                  // Add your onTap logic here
+                                },
                               ),
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(builder: (context) => NaverMapPage(),
-                                  ),
-                                );
-                                // Add your onTap logic here
-                              },
-                            ),
-                          ],
+                        ]
                         ),
 
                       );
