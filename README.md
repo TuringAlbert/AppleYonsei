@@ -10,4 +10,4 @@ flutter build web
 
 #build 내부 web 내부에 있는 파일만 복사하여 git branch 복사 (아래 링크 수정해야 함)
 
- <base href="/groupreservationweb deploy_only/">
+ <base href="/groupreservationweb/">
