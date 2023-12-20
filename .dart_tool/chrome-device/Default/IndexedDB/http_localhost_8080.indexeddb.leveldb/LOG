@@ -1,28 +1,36 @@
-2023/12/20-16:34:43.954 a907 Reusing MANIFEST /private/var/folders/ww/wmh9flln62v8tmwnmb5850640000gn/T/flutter_tools.v6mlc0/flutter_tools_chrome_device.zQ3N8q/Default/IndexedDB/http_localhost_8080.indexeddb.leveldb/MANIFEST-000001
-2023/12/20-16:34:43.954 a907 Recovering log #49
-2023/12/20-16:34:43.954 a907 Reusing old log /private/var/folders/ww/wmh9flln62v8tmwnmb5850640000gn/T/flutter_tools.v6mlc0/flutter_tools_chrome_device.zQ3N8q/Default/IndexedDB/http_localhost_8080.indexeddb.leveldb/000049.log 
-2023/12/20-16:34:43.954 a907 Delete type=0 #7
-2023/12/20-16:34:43.955 a907 Delete type=0 #4
-2023/12/20-16:34:43.955 a907 Delete type=0 #38
-2023/12/20-16:34:43.955 a907 Delete type=0 #11
-2023/12/20-16:34:43.955 a907 Delete type=0 #3
-2023/12/20-16:34:43.955 a907 Delete type=2 #13
-2023/12/20-16:34:43.955 a907 Delete type=2 #5
-2023/12/20-16:34:43.955 a907 Delete type=2 #9
-2023/12/20-16:34:43.955 a907 Delete type=2 #23
-2023/12/20-16:34:43.955 a907 Delete type=2 #36
-2023/12/20-16:34:43.955 a907 Delete type=0 #42
-2023/12/20-16:34:43.955 a907 Delete type=2 #40
-2023/12/20-16:34:43.955 a907 Delete type=0 #34
-2023/12/20-16:34:43.955 a907 Delete type=0 #21
-2023/12/20-16:34:43.955 a907 Delete type=2 #44
-2023/12/20-16:34:43.987 f903 Level-0 table #54: started
-2023/12/20-16:34:43.996 f903 Level-0 table #54: 5738 bytes OK
-2023/12/20-16:34:44.011 f903 Delete type=0 #49
-2023/12/20-16:34:44.011 a907 Manual compaction at level-0 from '\x00\x16\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x17\x00\x00\x00' @ 0 : 0; will stop at (end)
-2023/12/20-16:35:24.004 a403 Compacting 1@1 + 1@2 files
-2023/12/20-16:35:24.017 a403 Generated table #55@1: 40 keys, 2853 bytes
-2023/12/20-16:35:24.017 a403 Compacted 1@1 + 1@2 files => 2853 bytes
-2023/12/20-16:35:24.027 a403 compacted to: files[ 0 0 1 0 0 0 0 ]
-2023/12/20-16:35:24.029 a403 Delete type=2 #54
-2023/12/20-16:35:24.029 a403 Delete type=2 #51
+2023/12/21-08:03:26.650 8107 Reusing MANIFEST /private/var/folders/ww/wmh9flln62v8tmwnmb5850640000gn/T/flutter_tools.9QiwDz/flutter_tools_chrome_device.LVFfjR/Default/IndexedDB/http_localhost_8080.indexeddb.leveldb/MANIFEST-000001
+2023/12/21-08:03:26.650 8107 Recovering log #73
+2023/12/21-08:03:26.650 8107 Reusing old log /private/var/folders/ww/wmh9flln62v8tmwnmb5850640000gn/T/flutter_tools.9QiwDz/flutter_tools_chrome_device.LVFfjR/Default/IndexedDB/http_localhost_8080.indexeddb.leveldb/000073.log 
+2023/12/21-08:03:26.650 8107 Delete type=0 #7
+2023/12/21-08:03:26.650 8107 Delete type=0 #4
+2023/12/21-08:03:26.650 8107 Delete type=0 #38
+2023/12/21-08:03:26.650 8107 Delete type=0 #11
+2023/12/21-08:03:26.650 8107 Delete type=2 #59
+2023/12/21-08:03:26.650 8107 Delete type=0 #3
+2023/12/21-08:03:26.650 8107 Delete type=2 #72
+2023/12/21-08:03:26.650 8107 Delete type=0 #67
+2023/12/21-08:03:26.650 8107 Delete type=2 #13
+2023/12/21-08:03:26.650 8107 Delete type=0 #49
+2023/12/21-08:03:26.650 8107 Delete type=2 #5
+2023/12/21-08:03:26.650 8107 Delete type=2 #9
+2023/12/21-08:03:26.650 8107 Delete type=2 #23
+2023/12/21-08:03:26.650 8107 Delete type=2 #36
+2023/12/21-08:03:26.651 8107 Delete type=0 #53
+2023/12/21-08:03:26.651 8107 Delete type=0 #57
+2023/12/21-08:03:26.651 8107 Delete type=0 #42
+2023/12/21-08:03:26.651 8107 Delete type=2 #40
+2023/12/21-08:03:26.651 8107 Delete type=2 #55
+2023/12/21-08:03:26.651 8107 Delete type=2 #51
+2023/12/21-08:03:26.651 8107 Delete type=0 #34
+2023/12/21-08:03:26.651 8107 Delete type=0 #21
+2023/12/21-08:03:26.651 8107 Delete type=2 #44
+2023/12/21-08:03:26.677 af03 Level-0 table #78: started
+2023/12/21-08:03:26.686 af03 Level-0 table #78: 6064 bytes OK
+2023/12/21-08:03:26.698 af03 Delete type=0 #73
+2023/12/21-08:03:26.698 8107 Manual compaction at level-0 from '\x00\x1d\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x1e\x00\x00\x00' @ 0 : 0; will stop at '\x00\x1d\x00\x00\x05' @ 1395 : 1
+2023/12/21-08:03:26.698 8107 Compacting 1@0 + 1@1 files
+2023/12/21-08:03:26.702 8107 Generated table #79@0: 46 keys, 2765 bytes
+2023/12/21-08:03:26.703 8107 Compacted 1@0 + 1@1 files => 2765 bytes
+2023/12/21-08:03:26.713 8107 compacted to: files[ 0 1 1 0 0 0 0 ]
+2023/12/21-08:03:26.713 8107 Delete type=2 #78
+2023/12/21-08:03:26.713 8107 Manual compaction at level-0 from '\x00\x1d\x00\x00\x05' @ 1395 : 1 .. '\x00\x1e\x00\x00\x00' @ 0 : 0; will stop at (end)

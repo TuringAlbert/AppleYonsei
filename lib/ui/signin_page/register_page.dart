@@ -41,6 +41,7 @@ class _RegisterPageState extends State<RegisterPage> {
   final confirmPasswordController = TextEditingController();
   final nicknameController = TextEditingController();
 
+
   // try creating the user
   void signUserUp() async {
     // show loading circle
@@ -87,6 +88,7 @@ class _RegisterPageState extends State<RegisterPage> {
           'cardRegister': cardRegister,
           'enterpriseDataRegister': enterpriseDataRegister,
           'nickname': nicknameController.text,
+          'noShow' : 0,
         });
         print("User registered succesfully!");
       }

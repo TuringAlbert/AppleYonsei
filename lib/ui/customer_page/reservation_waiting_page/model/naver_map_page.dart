@@ -7,13 +7,13 @@ import 'package:flutter/painting.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_naver_map/flutter_naver_map.dart';
 
+
 class NaverMapPage extends StatefulWidget {
   NaverMapPage({Key? key}) : super(key: key);
 
   @override
   State<NaverMapPage> createState() => _NaverMapPageState();
 }
-
 class _NaverMapPageState extends State<NaverMapPage> {
   @override
   void initState() {
@@ -28,9 +28,10 @@ class _NaverMapPageState extends State<NaverMapPage> {
         ..src = 'assets/map.html'
         ..style.border = 'none',
     );
-
     super.initState();
+
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -68,7 +69,7 @@ class _NaverMapPageState extends State<NaverMapPage> {
                   SizedBox(height: 4,),
                   Center(
                     child: Text(
-                      "식당명 : AAA 식당",
+                      "식당명 : 빠빠빠 치킨",
                         style: TextStyle(
                         fontSize: 13.0, // Adjust the font size as needed
                       ),
@@ -106,7 +107,7 @@ class _NaverMapPageState extends State<NaverMapPage> {
                               ),
                             ),
                             Text(
-                              "서울특별시 서대문구 신촌동 131-54",
+                              "서울특별시 서대문구 창천동 52-35",
                               style: TextStyle(
                                 fontSize: 12.0,
                                 color: Colors.grey
@@ -142,14 +143,14 @@ class _NaverMapPageState extends State<NaverMapPage> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                "캡스톤 식당",
+                                "빠빠빠 치킨",
                                 style: TextStyle(
                                   fontSize: 15.0,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
                               Text(
-                                "010-0000-0000",
+                                "02-338-7888",
                                 style: TextStyle(
                                   fontSize: 12.0,
                                   color: Colors.grey,
